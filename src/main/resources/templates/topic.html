@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>A topic</title>
+</head>
+
+<body>
+
+	<header>
+		<h1> A Single Topic </h1>
+	</header>
+
+	<div th:each="topic: ${topics}">
+		<h2 th:text="${topic.name}"></h2>
+		
+	</div>
+	
+	<div th:each="course: ${courses}">
+		<h2>
+			<a th:href="@{/course(id=${course.id})}" th:text="${course.name}"></a>
+		</h2>
+	</div>
+	
+	<a href="http://localhost:8080/show-courses">Back to home</a>
+
+	
+</body>
+</html>
